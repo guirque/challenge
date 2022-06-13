@@ -24,7 +24,8 @@ function showPosition(position)
   mapholder=document.getElementById('mapholder')
   mapholder.style.height='250px';
   mapholder.style.width='500px';
- 
+  console.log(lat);
+  console.log(lon);
   var myOptions={
   center:latlon,zoom:14,
   mapTypeId:google.maps.MapTypeId.ROADMAP,
