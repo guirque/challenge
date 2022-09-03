@@ -7,6 +7,7 @@
     "browser_action":
     {
         "default_icon": "favicon-32x32.png",
+        "default_popup": "popup.html"
         "default_title": "Pegabot - Extensão"
     },
     
