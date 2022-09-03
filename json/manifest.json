@@ -1,0 +1,19 @@
+{
+    "manifest_version":3,
+    "nome":"Extenção",
+    "description":"Filtra noticias",
+    "version": "0.0.1",
+    "action:" :{
+        "default_icon": "img/icon.png",
+        "default_popup":"index.html"
+    },
+
+    "permissions":[
+        "tabs",
+        "storage"
+    ],
+
+    "host_permission":[
+        ""
+    ]
+}
