@@ -16,4 +16,4 @@ handles.forEach((handle) =>
 });
 
 console.log('\n\nSCRIPT RODANDO\n\n');
-console.log(document.querySelector('main'));
+console.log(document.querySelector('div'));
