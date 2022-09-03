@@ -10,13 +10,10 @@
         "default_title": "Pegabot - Extensão"
     },
     
-    "icons": {
-    "128": "128.png"},
-    "app": {
-    "urls": [""],
-    "launch": {
-    "web_url": ""}},
-    "permissions": [
-    "unlimitedStorage",
-    "notifications"]
+    "content_scripts":[
+    {
+        "matches": ["https://twitter.com/*"],
+        "js": ["busca.js"]
+    }]
+    
 }
