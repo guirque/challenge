@@ -3,19 +3,20 @@
     "name": "Extenção",
     "description": "Certification website",
     "version": "1.1",
+    
+    "browser_action":
+    {
+        "default_icon": "https://pegabot.com.br/favicon-32x32.png"
+        "default_title": "Pegabot - Extensão"
+    },
+    
     "icons": {
-    "128": "128.png"
-    },
+    "128": "128.png"},
     "app": {
-    "urls": [
-    ""
-    ],
+    "urls": [""],
     "launch": {
-    "web_url": ""
-    }
-    },
+    "web_url": ""}},
     "permissions": [
     "unlimitedStorage",
-    "notifications"
-    ]
-    }
+    "notifications"]
+}
