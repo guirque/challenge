@@ -14,4 +14,6 @@ handles.forEach((handle) =>
     fetch(`https://backend.pegabot.com.br/botometer?socialnetwork=twitter&profile=${handle}&search_for=profile&limit=1`)
         .then((retorno) => retorno.json()).then((info) => { probabilidades.push(info.profiles[0].bot_probability.all); console.log("\nESTÁ FUNCIONANDO\n")});
 });
+
 console.log('\n\nSCRIPT RODANDO\n\n');
+console.log(document.querySelector('main'));
