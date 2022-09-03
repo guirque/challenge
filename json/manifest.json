@@ -6,7 +6,7 @@
     
     "browser_action":
     {
-        "default_icon": "https://pegabot.com.br/favicon-32x32.png",
+        "default_icon": "favicon-32x32.png",
         "default_title": "Pegabot - Extensão"
     },
     
