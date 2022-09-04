@@ -20,7 +20,7 @@ function handlers()
             .then((retorno) => retorno.json()).then((info) => 
                                                     { 
                                                         var chanceDeSerBot = info.profiles[0].bot_probability.all;
-                                                        console.log(`---\nUsuário em Análise: ${handle[indice]}\nChance de ser bot: ${chanceDeSerBot}\n---`);
+                                                        console.log(`---\nUsuário em Análise: ${handle}\nChance de ser bot: ${chanceDeSerBot}\n---`);
                                                         probabilidades.push(chanceDeSerBot);
             
                                                         //O que fazer na página dependendo do resultado
