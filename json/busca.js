@@ -16,7 +16,7 @@ function handlers()
     //Para cada handle, analisa, por meio do Pegabot, se a conta é um bot ou não.
     handles.forEach((handle, indice) =>
     {
-        fetch(`https://backend.pegabot.com.br/botometer?socialnetwork=twitter&profile=${handle}&search_for=profile&limit=1`)
+        fetch(`https://backend.pegabot.com.br/botometer?socialnetwork=twitter&profile=${handle}&search_for=profile&limit=12`)
             .then((retorno) => retorno.json()).then((info) => 
                                                     { 
                                                         var chanceDeSerBot = info.profiles[0].bot_probability.all;
