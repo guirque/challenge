@@ -27,19 +27,19 @@ function handlers()
                                                         if(chanceDeSerBot >= 0.9)
                                                         {
                                                             //Ocultar tweet, mas permitindo que o usuário o revele, caso ache necessário
-                                                           document.querySelectorAll('span')[indice].style.display = 'none';   
+                                                           document.querySelectorAll('article')[indice].querySelector('span').style.display = 'none';   
                                                         }
                                                         else if(chanceDeSerBot >= 0.6)
                                                         {
                                                             //Probabilidade Alta
-                                                            document.querySelectorAll('span')[indice].style.color = 'red';
+                                                            document.querySelectorAll('article')[indice].querySelector('span').style.color = 'red';
                                                         }
                                                         else
                                                         {
                                                             //Probabilidade Baixa
-                                                            document.querySelectorAll('span')[indice].style.color = 'green';
+                                                            document.querySelectorAll('article')[indice].querySelector('span').style.color = 'green';
                                                         }
-                                                        document.querySelectorAll('span').innerHTML += '<div class="extPegaBot">' + chanceDeSerBot * 100 + '% de chance de ser bot</div>';
+                                                        document.querySelectorAll('article')[indice].querySelector('span').innerHTML += '<div class="extPegaBot">' + chanceDeSerBot * 100 + '% de chance de ser bot</div>';
                                                         }
                                                     });
     });
