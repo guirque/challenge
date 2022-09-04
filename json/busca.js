@@ -36,7 +36,7 @@ function handlers()
                                                         {
                                                             document.querySelectorAll('span')[indice].style.color = 'green';
                                                         }
-                                                        document.querySelectorAll('span')[indice].innerHTML += ´<div class="extPegaBot"> ${chanceDeSerBot * 100}% de chance de ser bot</div>´;
+                                                        document.querySelectorAll('span')[indice].innerHTML += '<div class="extPegaBot">' + chanceDeSerBot * 100 + '% de chance de ser bot</div>';
                                                     
                                                     });
     });
