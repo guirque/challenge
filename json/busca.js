@@ -14,10 +14,10 @@ function handlers()
     });
 
     //Para cada handle, analisa, por meio do Pegabot, se a conta é um bot ou não.
-    handles.forEach((handle) =>
+    handles.forEach((handle, indice) =>
     {
         fetch(`https://backend.pegabot.com.br/botometer?socialnetwork=twitter&profile=${handle}&search_for=profile&limit=1`)
-            .then((retorno) => retorno.json()).then((info, indice) => 
+            .then((retorno) => retorno.json()).then((info) => 
                                                     { 
                                                         var chanceDeSerBot = info.profiles[0].bot_probability.all;
                                                         probabilidades.push(chanceDeSerBot);
@@ -26,17 +26,17 @@ function handlers()
                                                         if(chanceDeSerBot >= 0.9)
                                                         {
                                                             //Ocultar tweet, mas permitindo que o usuário o revele, caso ache necessário
-                                                           postagens[indice].style.display = 'none';   
+                                                           document.querySelectorAll('span')[indice].style.display = 'none';   
                                                         }
                                                         else if(chanceDeSerBot >= 0.5)
                                                         {
-                                                            postagens[indice].style.color = 'red';
+                                                            document.querySelectorAll('span')[indice].style.color = 'red';
                                                         }
                                                         else
                                                         {
-                                                            postagens[indice].style.color = 'green';
+                                                            document.querySelectorAll('span')[indice].style.color = 'green';
                                                         }
-                                                        postagens[indice].innerHTML += '<div class="extPegaBot">' + chanceDeSerBot * 100 + '% de chance de ser bot</div>';
+                                                        document.querySelectorAll('span').innerHTML += '<div class="extPegaBot">' + chanceDeSerBot * 100 + '% de chance de ser bot</div>';
                                                     
                                                     });
     });
