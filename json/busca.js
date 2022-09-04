@@ -16,24 +16,27 @@ function handlers()
     //Para cada handle, analisa, por meio do Pegabot, se a conta é um bot ou não.
     handles.forEach((handle, indice) =>
     {
-        fetch(`https://backend.pegabot.com.br/botometer?socialnetwork=twitter&profile=${handle}&search_for=profile&limit=12`)
-            .then((retorno) => retorno.json()).then((info) => 
-                                                    { 
-                                                        var chanceDeSerBot = info.profiles[0].bot_probability.all;
-                                                        //console.log(`---\nUsuário em Análise: ${handle}\nChance de ser bot: ${chanceDeSerBot}\n---`);
-                                                        probabilidades.push(chanceDeSerBot);
                 if (!document.querySelectorAll('article')[indice].querySelector('.extPegaBot'))
                 {
+                    fetch(`https://backend.pegabot.com.br/botometer?socialnetwork=twitter&profile=${handle}&search_for=profile&limit=12`)
+                    .then((retorno) => retorno.json()).then((info) => 
+                                                    { 
+                var chanceDeSerBot = info.profiles[0].bot_probability.all;
+                //console.log(`---\nUsuário em Análise: ${handle}\nChance de ser bot: ${chanceDeSerBot}\n---`);
+                probabilidades.push(chanceDeSerBot);
+
                     //O que fazer na página dependendo do resultado
                     if (chanceDeSerBot >= 0.9) {
-                        //Ocultar tweet, mas permitindo que o usuário o revele, caso ache necessário
+                        //Ocultar tweet, mas permitindo que o usuário o revele, caso ache necessário (a atualizar)
                         document.querySelectorAll('article')[indice].querySelector('span').style.display = 'none';
                     }
-                    else if (chanceDeSerBot >= 0.5) {
+                    else if (chanceDeSerBot >= 0.6) {
+                        //Probabilidade Alta
                         document.querySelectorAll('article')[indice].querySelector('span').style.color = 'red';
                         document.querySelectorAll('article')[indice].querySelector('span').innerHTML += '<div class="extPegaBot">' + Math.round(chanceDeSerBot * 100) + '% de chance de ser bot (probabilidade alta)</div>';
                     }
                     else {
+                        //Probabilidade Baixa
                         document.querySelectorAll('article')[indice].querySelector('span').style.color = 'green';
                         document.querySelectorAll('article')[indice].querySelector('span').innerHTML += '<div class="extPegaBot">' + Math.round(chanceDeSerBot * 100) + '% de chance de ser bot (probabilidade baixa)</div>';
                     }
@@ -45,4 +48,4 @@ function handlers()
 }
 
 console.log("\n\nExtensão PegaBot em Execução\n\n");
-var updating = setInterval(handlers, 8000);
+var updating = setInterval(handlers, 3000);
