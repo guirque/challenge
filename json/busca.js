@@ -26,17 +26,17 @@ function handlers()
                                                         if(chanceDeSerBot >= 0.9)
                                                         {
                                                             //Ocultar tweet, mas permitindo que o usuário o revele, caso ache necessário
-                                                            document.querySelectorAll('article')[indice].style.display = 'none';   
+                                                           postagens[indice].style.display = 'none';   
                                                         }
                                                         else if(chanceDeSerBot >= 0.5)
                                                         {
-                                                            document.querySelectorAll('span')[indice].style.color = 'red';
+                                                            postagens[indice].style.color = 'red';
                                                         }
                                                         else
                                                         {
-                                                            document.querySelectorAll('span')[indice].style.color = 'green';
+                                                            postagens[indice].style.color = 'green';
                                                         }
-                                                        document.querySelectorAll('span')[indice].innerHTML += '<div class="extPegaBot">' + chanceDeSerBot * 100 + '% de chance de ser bot</div>';
+                                                        postagens[indice].innerHTML += '<div class="extPegaBot">' + chanceDeSerBot * 100 + '% de chance de ser bot</div>';
                                                     
                                                     });
     });
