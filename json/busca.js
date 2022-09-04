@@ -20,6 +20,7 @@ function handlers()
             .then((retorno) => retorno.json()).then((info) => 
                                                     { 
                                                         var chanceDeSerBot = info.profiles[0].bot_probability.all;
+                                                        console.log(`---\nUsuário em Análise: ${handle[indice]}\nChance de ser bot: ${chanceDeSerBot}\n---`);
                                                         probabilidades.push(chanceDeSerBot);
             
                                                         //O que fazer na página dependendo do resultado
@@ -40,8 +41,7 @@ function handlers()
                                                     
                                                     });
     });
-
-
 }
 
+console.log("\n\nExtensão PegaBot em Execução\n\n");
 var updating = setInterval(handlers, 8000);
